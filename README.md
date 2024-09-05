@@ -24,7 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](design/desktop-design-empty.jpg)
+![](design/mobile-design.jpg)
 
 ### Links
 
