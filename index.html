@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form id="app">
+      <section id="inputs">
+        <label for="bill">
+          <p class="title">Bill</p>
+          <input
+            type="number"
+            name="bill"
+            id="bill"
+            placeholder="0"
+            dir="rtl"
+            min="0"
+            step=".000001"
+          />
+          <p class="errmsg" id="bill-errmsg">invalid Input</p>
+        </label>
+        <div>
+          <p class="title">Select Tip %</p>
+          <div id="select-tip">
+            <div class="tip-btns" name="tip" id="5%">5%</div>
+            <div class="tip-btns" name="tip" id="10%">10%</div>
+            <div class="tip-btns" name="tip" id="15%">15%</div>
+            <div class="tip-btns" name="tip" id="25%">25%</div>
+            <div class="tip-btns" name="tip" id="50%">50%</div>
+            <input
+              type="number"
+              name="tip"
+              id="custom-input"
+              placeholder="Custom"
+              dir="rtl"
+              step=".000001"
+            />
+          </div>
+          <p class="errmsg" id="tip-errmsg">invalid Input</p>
+        </div>
+        <label for="people">
+          <p id="error-msg-pos" class="title">
+            number of people
+            <span class="errmsg" id="people-errmsg">invalid Input</span>
+          </p>
+          <input
+            type="number"
+            name="num-of-people"
+            id="people"
+            dir="rtl"
+            placeholder="0"
+            min="1"
+            step="1"
+          />
+        </label>
+      </section>
+      <section id="output">
+        <div id="tipAmount">
+          <div>Tip Amount</div>
+          <div class="for-person">/ person</div>
+          <output id="tipForPerson">$0.00</output>
+        </div>
+        <div id="Total">
+          <div>Total</div>
+          <div class="for-person">/ person</div>
+          <output id="totalForPerson">$0.00</output>
+        </div>
+        <input type="reset" value="Reset" id="reset" />
+      </section>
+      <input type="submit" style="display: none" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  /******/
+  --Font-size-form-inputs: calc(
+    16px + (24 - 16) * ((min(100vw, 1440px) - 375px) / (1440 - 375))
+  );
+  --FontFamily: "Space Mono";
+  --Weights: 700;
+  /********/
+  --padding: 1rem;
+  --common-inputs-height: 3rem;
+  --common-border-radius: 0.5rem;
+  --mobile-width: 375px;
+  --wrapping-width: 600px;
+}
+
+body {
+  font-family: var(--FontFamily), monospace;
+  font-size: var(--Font-size-form-inputs);
+  font-weight: var(--Weights);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Strong-cyan);
+}
+form {
+  padding: calc(var(--padding) * 2);
+  border: 1px solid;
+  width: 925px;
+  min-height: 500px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: calc(var(--common-border-radius) * 3);
+  background-color: var(--White);
+}
+
+section {
+  flex: 1 1 calc(var(--wrapping-width) / 2);
+}
+
+#inputs {
+  padding: var(--padding);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+#bill {
+  width: 100%;
+  height: var(--common-inputs-height);
+  border-radius: var(--common-border-radius);
+  padding: var(--padding);
+  background-image: url("images\\icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: top 50% left var(--padding);
+  background-color: var(--Very-light-grayish-cyan);
+}
+#bill::-webkit-outer-spin-button,
+#bill::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#bill {
+  -moz-appearance: textfield;
+}
+#select-tip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--padding);
+}
+
+#select-tip > .tip-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--common-border-radius);
+  height: var(--common-inputs-height);
+  background-color: var(--Very-dark-cyan);
+  color: var(--White);
+  border: none;
+}
+
+#select-tip > .tip-btns:hover,
+.choosed {
+  color: black !important;
+  background-color: var(--Grayish-cyan) !important;
+}
+
+#custom-input {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--common-border-radius);
+  padding-inline: var(--padding);
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+}
+#custom-input::-webkit-outer-spin-button,
+#custom-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#custom-input {
+  -moz-appearance: textfield;
+}
+
+#custom-input::placeholder {
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: var(--Weights);
+}
+
+#people {
+  width: 100%;
+  height: var(--common-inputs-height);
+  border-radius: var(--common-border-radius);
+  padding: var(--padding);
+  background-image: url("images\\icon-person.svg ");
+  background-repeat: no-repeat;
+  background-position: top 50% left var(--padding);
+  background-color: var(--Very-light-grayish-cyan);
+}
+
+#people::-webkit-outer-spin-button,
+#people::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#people {
+  -moz-appearance: textfield;
+}
+/*********************** Output ***************************/
+
+#output {
+  padding: calc(2 * var(--padding));
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: calc(var(--common-border-radius) * 2);
+  border: 1px solid;
+  background-color: var(--Very-dark-cyan);
+}
+
+#tipAmount,
+#Total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: var(--White);
+}
+output {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  /***********for text ***********/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Grayish-cyan);
+  font-size: calc(var(--Font-size-form-inputs) * 2);
+}
+
+input[type="reset"] {
+  height: var(--common-inputs-height);
+  border-radius: var(--common-border-radius);
+  background-color: var(--Grayish-cyan);
+  border: none;
+}
+
+.for-person {
+  font-size: calc(var(--Font-size-form-inputs) * 0.75);
+  color: var(--Grayish-cyan);
+}
+
+.errmsg {
+  color: red;
+  font-size: 12px;
+  font-weight: normal;
+  margin-block: 5px;
+  float: right;
+  display: none;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    min-height: 100vh;
+    gap: 5rem;
+  }
+}
